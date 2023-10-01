@@ -1,8 +1,10 @@
 def ft_mean(pop: list):
+    """Calculate the mean of a list."""
     return sum(pop) / len(pop)
 
 
 def ft_median(pop: list):
+    """Calculate the median of a sorted list."""
     pop.sort()
     n = len(pop)
     middleIndex = n // 2
@@ -13,6 +15,7 @@ def ft_median(pop: list):
 
 
 def ft_quartiles(pop: list):
+    """Return the first and third quartiles of a sorted list."""
     pop.sort()
     i1 = len(pop) // 4
     i3 = i1 * 3
@@ -22,16 +25,19 @@ def ft_quartiles(pop: list):
 
 
 def ft_variance(pop):
+    """Calculate the variance of a list."""
     mean = ft_mean(pop)
     tot = sum((x - mean) ** 2 for x in pop)
     return (tot / len(pop))
 
 
 def ft_standard_deviation(pop):
+    """Calculate the standard deviation of a list."""
     return ft_variance(pop) ** 0.5
 
 
 def ft_statistics(*args, **kwargs) -> None:
+    """Print specific statistics for a list based on keyword arguments."""
     if not args:
         for _ in range(3):
             print("ERROR")
